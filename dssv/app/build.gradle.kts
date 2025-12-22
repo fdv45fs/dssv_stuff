@@ -33,7 +33,11 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-}
+
+    buildFeatures {
+        dataBinding = true
+    }
+} 
 
 dependencies {
 
@@ -42,6 +46,12 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.1")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation("androidx.fragment:fragment-ktx:1.6.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
