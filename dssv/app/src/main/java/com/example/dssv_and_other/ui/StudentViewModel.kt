@@ -1,13 +1,14 @@
 package com.example.dssv_and_other.ui
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.dssv_and_other.Student
 import com.example.dssv_and_other.data.StudentRepository
 
-class StudentViewModel : ViewModel() {
-    private val repository = StudentRepository()
+class StudentViewModel(application: Application) : AndroidViewModel(application) {
+    private val repository = StudentRepository(application.applicationContext)
 
     val students: LiveData<List<Student>> = repository.students
 
